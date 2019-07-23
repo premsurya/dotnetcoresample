@@ -11,19 +11,12 @@ phases:
   build:
     commands:
       - dotnet restore dotnet-core-tutorial.csproj
-      - echo "restore success"
       - dotnet build dotnet-core-tutorial.csproj
-      - echo "build success"
-      - dotnet publish dotnet-core-tutorial.csproj -o ./staging/app
-      - echo "publish success"
-      - cd staging/
+      - dotnet publish dotnet-core-tutorial.csproj -o site
+      - cd site
 #      - ls -al
-      - cd app && zip ../site.zip *
-      - echo "staging" && ls -al
-      - cd ../
+      - zip ../site.zip *
       - pwd
-      - cp ./aws-windows-deployment-manifest.json staging/.
-#      - pwd
       - ls -al
 artifacts:
   files:
