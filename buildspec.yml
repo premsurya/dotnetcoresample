@@ -17,7 +17,9 @@ phases:
 #      - ls -al
       - zip ../site.zip *
       - cd ../
-      - pwd
+      - mkdir staging
+      - mv aws-windows-deployment-manifest.json site.zip staging/
+      - cd staging
       - ls -al
 artifacts:
   files:
