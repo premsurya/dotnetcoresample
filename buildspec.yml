@@ -1,0 +1,23 @@
+version: 0.2
+
+phases:
+
+  install:
+    runtime-versions: 
+      dotnet: 2.2
+    commands:
+      - echo "Entering Install Phase"
+
+  build:
+    commands:
+      - dotnet restore dotnet-core-tutorial.csproj
+      - echo "restore success"
+      - dotnet build dotnet-core-tutorial.csproj
+      - echo "build success"
+      - dotnet publish dotnet-core-tutorial.csproj -o ./staging/app
+      - echo "publish success"
+      - cp ./aws-windows-deployment-manifest.json ./staging/.
+artifacts:
+  files:
+    - '**/*'
+  base-directory: 'staging'
