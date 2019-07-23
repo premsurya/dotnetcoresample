@@ -18,7 +18,8 @@ phases:
       - echo "publish success"
       - cd staging/
       - ls -al
-    #  - cd staging/app && zip ../site.zip
+      - cd app && zip ../site.zip
+      - echo "staging" && ls -al
       - cd ../
       - cp ./aws-windows-deployment-manifest.json ./staging/.
       - pwd
