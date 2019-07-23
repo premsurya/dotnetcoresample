@@ -16,6 +16,7 @@ phases:
       - cd site
 #      - ls -al
       - zip ../site.zip *
+      - cd ../
       - pwd
       - ls -al
 artifacts:
