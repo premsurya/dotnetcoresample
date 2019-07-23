@@ -16,14 +16,14 @@ phases:
       - echo "build success"
       - dotnet publish dotnet-core-tutorial.csproj -o ./staging/app
       - echo "publish success"
-      - cd staging/
-      - ls -al
-      - cd app && zip ../site.zip
+#      - cd staging/
+#      - ls -al
+      - cd app && zip ../site.zip *
       - echo "staging" && ls -al
       - cd ../
       - cp ./aws-windows-deployment-manifest.json ./staging/.
-      - pwd
-      - ls -al
+#      - pwd
+#      - ls -al
 artifacts:
   files:
     - '**/*'
