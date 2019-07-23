@@ -16,7 +16,8 @@ phases:
       - echo "build success"
       - dotnet publish dotnet-core-tutorial.csproj -o ./staging/app
       - echo "publish success"
-      - cd ./staging/app && zip ../site.zip
+      - pwd
+      - cd staging/app && zip ../site.zip
       - cd ../
       - cp ./aws-windows-deployment-manifest.json ./staging/.
       - pwd
